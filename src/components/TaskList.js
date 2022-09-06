@@ -1,6 +1,4 @@
-import ToDoBoard from "./components/ToDoBoard";
-
-function App() {
+const TaskList = props => {
   const DUMMY_TASKS = [
     {
       id: 1,
@@ -19,7 +17,7 @@ function App() {
     },
   ];
 
-  return <ToDoBoard />;
-}
+  return <ul></ul>;
+};
 
-export default App;
+export default TaskList;

@@ -1,0 +1,24 @@
+.menu {
+  display: flex;
+  height: 4rem;
+}
+
+.menu div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  color: rgb(53, 17, 158);
+}
+
+.disabled {
+  background-color: rgba(238, 242, 252, 0.712);
+  color: rgb(145, 157, 173);
+  border: 1px solid rgb(227, 231, 236);
+  border-radius: 16px;
+}
+
+.disabled:hover {
+  background-color: rgba(223, 253, 249, 0.712);
+}
