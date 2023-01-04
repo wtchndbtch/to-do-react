@@ -22,3 +22,10 @@
 .disabled:hover {
   background-color: rgba(223, 253, 249, 0.712);
 }
+
+main {
+  height: 26rem;
+  position: relative;
+  top: 6px;
+  background-color: white;
+}

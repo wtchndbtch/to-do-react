@@ -1,0 +1,22 @@
+.input {
+  /* display: block; */
+  display: flex;
+  color: rgb(53, 17, 158);
+  font-size: 1.25rem;
+  align-items: center;
+}
+
+.input input {
+  width: 20px;
+  height: 20px;
+  accent-color: rgb(116, 84, 213);
+}
+
+.input label {
+  margin-left: 0.5rem;
+}
+
+.input.disabled {
+  color: darkgrey;
+  text-decoration: line-through;
+}

@@ -1,23 +1,24 @@
-const TaskList = props => {
-  const DUMMY_TASKS = [
-    {
-      id: 1,
-      task: "Give dog a bath",
-      complete: true,
-    },
-    {
-      id: 2,
-      task: "Do laundry",
-      complete: true,
-    },
-    {
-      id: 3,
-      task: "Vacuum floor",
-      complete: false,
-    },
-  ];
+import Task from "./Task";
+import classes from "./TaskList.module.css";
+import TaskContext from "../store/task-context";
+import React, { useContext } from "react";
 
-  return <ul></ul>;
+const TaskList = props => {
+  const ctx = useContext(TaskContext);
+  return (
+    <ul>
+      {props.tasks.map(todo => {
+        return (
+          <Task
+            key={todo.id}
+            task={todo.task}
+            completed={todo.completed}
+            toggleTask={ctx.toggleTask(todo.id)}
+          />
+        );
+      })}
+    </ul>
+  );
 };
 
 export default TaskList;
