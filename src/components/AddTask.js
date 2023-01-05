@@ -1,16 +1,10 @@
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import TaskContext from "../store/task-context";
 
 import Plus from "./UI/Plus";
 import classes from "./AddTask.module.css";
 
-const AddTask = props => {
+const AddTask = () => {
   const taskInputRef = useRef();
   const [error, setError] = useState(false);
 

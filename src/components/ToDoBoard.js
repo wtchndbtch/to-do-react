@@ -1,41 +1,17 @@
-import React, { useContext } from "react";
+import React from "react";
 import TaskManager from "./TaskManager";
-import TaskContext from "../store/task-context";
 
 import AddTask from "./AddTask";
 
 import classes from "./ToDoBoard.module.css";
 
-const ToDoBoard = props => {
-  // const [taskList, setTaskList] = useState([]);
-  const ctx = useContext(TaskContext);
-
-  // const addTaskHandler = task => {
-  //   setTaskList(prevUsersList => {
-  //     return [
-  //       ...prevUsersList,
-  //       { id: Math.random().toString(), task: task, completed: false },
-  //     ];
-  //   });
-  // };
-
-  // const toggleTaskCompleted = id => () =>
-  //   setTaskList(taskList =>
-  //     taskList.map(task =>
-  //       task.id === id ? { ...task, completed: !task.completed } : task
-  //     )
-  //   );
-
+const ToDoBoard = () => {
   return (
     <div className={classes.container}>
       <header>
-        <TaskManager
-        // tasks={taskList}
-        // toggleTaskCompleted={toggleTaskCompleted}
-        />
+        <TaskManager />
       </header>
-
-      <AddTask onAddUser={ctx.onAddTask} />
+      <AddTask />
     </div>
   );
 };

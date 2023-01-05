@@ -1,4 +1,4 @@
-const CheckBadgeIcon = props => {
+const CheckBadgeIcon = () => {
   return (
     <svg
       height="24"
@@ -7,7 +7,7 @@ const CheckBadgeIcon = props => {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
-      stroke="gray"
+      stroke="currentColor"
       className="w-6 h-6"
     >
       <path

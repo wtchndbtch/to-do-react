@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import React, { useContext, useMemo, useState } from "react";
 import ListIcon from "./UI/ListIcon";
 import CheckBadgeIcon from "./UI/CheckBadgeIcon";
 import TaskList from "./TaskList";
@@ -6,11 +6,9 @@ import TaskContext from "../store/task-context";
 
 import classes from "./TaskManager.module.css";
 
-const TaskManager = props => {
+const TaskManager = () => {
   const [isShownCompletedList, setIsShowComplitedList] = useState(false);
   const ctx = useContext(TaskContext);
-
-  console.log("zalupa", ctx.tasks);
 
   const tasksToRender = useMemo(
     () =>
@@ -27,18 +25,21 @@ const TaskManager = props => {
   return (
     <>
       <div className={classes.menu}>
-        <div onClick={hideCompletedListHandler}>
+        <div
+          onClick={hideCompletedListHandler}
+          className={isShownCompletedList ? classes.disabled : classes.enabled}
+        >
           <ListIcon />
         </div>
-        <div onClick={showCompletedListHandler} className={classes.disabled}>
+        <div
+          onClick={showCompletedListHandler}
+          className={isShownCompletedList ? classes.enabled : classes.disabled}
+        >
           <CheckBadgeIcon />
         </div>
       </div>
       <main>
-        <TaskList
-          tasks={tasksToRender}
-          // toggleTaskCompleted={props.toggleTaskCompleted}
-        />
+        <TaskList tasks={tasksToRender} />
       </main>
     </>
   );

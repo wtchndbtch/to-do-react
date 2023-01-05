@@ -23,6 +23,10 @@
   background-color: rgba(223, 253, 249, 0.712);
 }
 
+.enabled {
+  color: rgb(53, 17, 158);
+}
+
 main {
   height: 26rem;
   position: relative;
