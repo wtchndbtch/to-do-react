@@ -1,4 +1,4 @@
-.container {
+.card {
   height: 35rem;
   width: 50%;
   margin: 4rem auto;
@@ -8,7 +8,7 @@
 }
 
 @media (max-width: 600px) {
-  .container {
+  .card {
     width: 70%;
   }
 }

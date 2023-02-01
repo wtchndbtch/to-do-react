@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import TaskContext from "../store/task-context";
+import TaskContext from "../../store/task-context";
 
-import Plus from "./UI/Plus";
+import Plus from "../UI/Plus";
 import classes from "./AddTask.module.css";
 
 const AddTask = () => {

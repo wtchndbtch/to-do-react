@@ -26,10 +26,3 @@
 .enabled {
   color: rgb(53, 17, 158);
 }
-
-main {
-  height: 26rem;
-  position: relative;
-  top: 6px;
-  background-color: white;
-}
