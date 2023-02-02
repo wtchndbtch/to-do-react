@@ -4,6 +4,7 @@ const TaskContext = React.createContext({
   tasks: [],
   onAddTask: task => {},
   toggleTask: id => {},
+  onDeleteAllTasks: () => {},
 });
 
 export const TaskContextProvider = props => {
@@ -23,12 +24,17 @@ export const TaskContextProvider = props => {
       )
     );
 
+  const deleteAllTasksHandler = () => {
+    setTaskList(prevUsersList => []);
+  };
+
   return (
     <TaskContext.Provider
       value={{
         tasks: taskList,
         onAddTask: addTaskHandler,
         toggleTask: toggleTaskCompleted,
+        onDeleteAllTasks: deleteAllTasksHandler,
       }}
     >
       {props.children}

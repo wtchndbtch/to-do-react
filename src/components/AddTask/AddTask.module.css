@@ -21,22 +21,34 @@
   background-color: rgb(249, 241, 247);
 }
 
-.add-task-btn {
+.btn {
   display: inline-block;
+  width: 4rem;
   padding: 0.5rem 1.25rem;
   margin: 0.5rem 0.5rem 0.5rem 0;
-  background-color: rgb(231, 189, 221);
   border: 2px solid rgb(99, 96, 105);
   border-radius: 32px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.add-task-btn {
+  background-color: rgb(231, 189, 221);
 }
 
 .add-task-btn:hover {
   background-color: rgb(245, 203, 235);
-  cursor: pointer;
 }
 
-.add-task-btn span {
+.refresh-btn {
+  background-color: rgb(225, 155, 148);
+}
+
+.refresh-btn:hover {
+  background-color: rgb(247, 172, 165);
+}
+
+.btn span {
   color: rgb(71, 69, 74);
 }
 

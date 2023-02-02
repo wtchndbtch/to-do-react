@@ -1,7 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import TaskContext from "../../store/task-context";
 
+import Button from "../UI/Button";
 import Plus from "../UI/Plus";
+import RefreshIcon from "../UI/RefreshIcon";
+
 import classes from "./AddTask.module.css";
 
 const AddTask = () => {
@@ -36,17 +39,29 @@ const AddTask = () => {
     };
   }, [error]);
 
+  const deleteAllTasksHandler = () => {
+    ctx.onDeleteAllTasks();
+  };
+
   return (
     <form
       onSubmit={addTaskHandler}
       className={`${classes.form} ${error ? classes.error : ""}`}
     >
       <input ref={taskInputRef} type="text" />
-      <button className={classes["add-task-btn"]}>
-        <span>
-          <Plus />
-        </span>
-      </button>
+      <Button
+        onClick={addTaskHandler}
+        className={`${classes.btn} ${classes["add-task-btn"]}`}
+      >
+        <Plus />
+      </Button>
+      <Button
+        type="reset"
+        onClick={deleteAllTasksHandler}
+        className={`${classes.btn} ${classes["refresh-btn"]}`}
+      >
+        <RefreshIcon />
+      </Button>
     </form>
   );
 };
