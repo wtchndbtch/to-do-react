@@ -9,21 +9,17 @@ const CardHeading = ({
   showCompletedList,
   isShownCompletedList,
 }) => {
-  const showCompletedListHandler = () => showCompletedList();
-
-  const hideCompletedListHandler = () => hideCompletedList();
-
   return (
     <>
       <div className={classes.menu}>
         <div
-          onClick={hideCompletedListHandler}
+          onClick={() => hideCompletedList()}
           className={isShownCompletedList ? classes.disabled : classes.enabled}
         >
           <ListIcon />
         </div>
         <div
-          onClick={showCompletedListHandler}
+          onClick={() => showCompletedList()}
           className={isShownCompletedList ? classes.enabled : classes.disabled}
         >
           <CheckBadgeIcon />

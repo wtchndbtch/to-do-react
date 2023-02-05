@@ -2,13 +2,16 @@ import React from "react";
 
 import classes from "./Task.module.css";
 
-const Task = props => {
+const Task = ({ completed, task, toggleTask, id }) => {
   return (
-    <div
-      className={`${classes.input} ${props.completed ? classes.disabled : ""}`}
-    >
-      <input type="checkbox" value={props.task} onChange={props.toggleTask} />
-      <label htmlFor={props.id}>{props.task}</label>
+    <div className={`${classes.input} ${completed ? classes.disabled : ""}`}>
+      <input
+        type="checkbox"
+        value={task}
+        onChange={toggleTask}
+        checked={completed ? true : false}
+      />
+      <label htmlFor={id}>{task}</label>
     </div>
   );
 };

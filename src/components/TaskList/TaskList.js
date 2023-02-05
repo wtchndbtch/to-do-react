@@ -4,12 +4,13 @@ import TaskContext from "../../store/task-context";
 import Task from "../Task/Task";
 import classes from "./TaskList.module.css";
 
-const TaskList = props => {
+const TaskList = ({ tasks }) => {
   const ctx = useContext(TaskContext);
+
   return (
     <div className={classes.div}>
       <ul className={classes.ul}>
-        {props.tasks.map(todo => {
+        {tasks.map(todo => {
           return (
             <Task
               key={todo.id}

@@ -1,5 +1,5 @@
 .div {
-  height: 26rem;
+  min-height: 23rem;
   position: relative;
   top: 6px;
   background-color: white;

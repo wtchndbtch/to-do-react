@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const TaskContext = React.createContext({
   tasks: [],
@@ -7,8 +7,17 @@ const TaskContext = React.createContext({
   onDeleteAllTasks: () => {},
 });
 
+const getInitialState = () => {
+  const tasks = localStorage.getItem("tasks");
+  return tasks ? JSON.parse(tasks) : [];
+};
+
 export const TaskContextProvider = props => {
-  const [taskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState(getInitialState);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(taskList));
+  }, [taskList]);
 
   const addTaskHandler = task => {
     setTaskList(prevUsersList => [

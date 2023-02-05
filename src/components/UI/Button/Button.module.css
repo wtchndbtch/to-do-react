@@ -1,0 +1,11 @@
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  border: 2px solid rgb(99, 96, 105);
+  border-radius: 32px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font: inherit;
+  color: rgb(71, 69, 74);
+}

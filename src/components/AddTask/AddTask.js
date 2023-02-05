@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import TaskContext from "../../store/task-context";
 
-import Button from "../UI/Button";
+import Button from "../UI/Button/Button";
 import Plus from "../UI/Plus";
 import RefreshIcon from "../UI/RefreshIcon";
 
 import classes from "./AddTask.module.css";
 
-const AddTask = () => {
+const AddTask = ({ onOpenDialog }) => {
   const taskInputRef = useRef();
   const [error, setError] = useState(false);
 
@@ -39,29 +39,27 @@ const AddTask = () => {
     };
   }, [error]);
 
-  const deleteAllTasksHandler = () => {
-    ctx.onDeleteAllTasks();
-  };
-
   return (
     <form
       onSubmit={addTaskHandler}
       className={`${classes.form} ${error ? classes.error : ""}`}
     >
       <input ref={taskInputRef} type="text" />
-      <Button
-        onClick={addTaskHandler}
-        className={`${classes.btn} ${classes["add-task-btn"]}`}
-      >
-        <Plus />
-      </Button>
-      <Button
-        type="reset"
-        onClick={deleteAllTasksHandler}
-        className={`${classes.btn} ${classes["refresh-btn"]}`}
-      >
-        <RefreshIcon />
-      </Button>
+      <div className={classes["btn-container"]}>
+        <Button
+          onClick={addTaskHandler}
+          className={`${classes.btn} ${classes["add-task-btn"]}`}
+        >
+          <Plus />
+        </Button>
+        <Button
+          type="reset"
+          onClick={onOpenDialog}
+          className={classes["refresh-btn"]}
+        >
+          <RefreshIcon />
+        </Button>
+      </div>
     </form>
   );
 };

@@ -1,0 +1,16 @@
+.container {
+  text-align: center;
+}
+
+.h2 {
+  color: rgb(41, 40, 43);
+}
+
+.sb-btn {
+  background-color: rgb(126, 210, 193);
+  width: 15%;
+}
+
+.cancel-btn {
+  width: 15%;
+}
