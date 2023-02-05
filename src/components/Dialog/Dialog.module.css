@@ -14,3 +14,13 @@
 .cancel-btn {
   width: 15%;
 }
+
+@media (max-width: 768px) {
+  .sb-btn {
+    width: 40%;
+  }
+
+  .cancel-btn {
+    width: 40%;
+  }
+}
