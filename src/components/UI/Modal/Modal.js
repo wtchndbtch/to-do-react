@@ -4,6 +4,8 @@ import { createPortal } from "react-dom";
 import classes from "./Modal.module.css";
 
 const Backdrop = ({ onClose }) => {
+  console.log("🚀 ~ file: Modal.js:7 ~ onClose", onClose);
+
   return <div className={classes.backdrop} onClick={onClose} />;
 };
 

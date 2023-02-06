@@ -16,7 +16,7 @@ const Dialog = ({ onClose }) => {
   };
 
   return (
-    <Modal>
+    <Modal onClose={onClose}>
       <div className={classes.container}>
         <h2 className={classes.h2}>Clear the task list?</h2>
         <p>Be careful, you won't be able to undo the changes.</p>
